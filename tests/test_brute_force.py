@@ -73,6 +73,70 @@ class TestBruteForce(unittest.TestCase):
             calculate_extremism(network, strategy)
         )
 
+    def test_insufficient_budget(self):
+        network = SocialNetwork([
+            Agent(100, 0.0, 1),
+            Agent(-80, 0.0, 1)
+        ], 10)
+
+        strategy, effort, extremism = modexFB(network)
+
+        self.assertEqual(strategy, [0, 0])
+        self.assertEqual(effort, 0)
+        self.assertAlmostEqual(
+            extremism,
+            calculate_extremism(network, [0, 0])
+        )
+
+    def test_zero_cost_moderation(self):
+        network = SocialNetwork([
+            Agent(100, 1.0, 1),
+            Agent(-50, 0.0, 1)
+        ], 0)
+
+        strategy, effort, extremism = modexFB(network)
+
+        self.assertEqual(strategy, [1, 0])
+        self.assertEqual(effort, 0)
+        self.assertAlmostEqual(extremism, 25.0)
+
+    def test_multiple_optimal_solutions(self):
+        network = SocialNetwork([
+            Agent(50, 0.0, 1),
+            Agent(-50, 0.0, 1)
+        ], 50)
+
+        strategy, effort, extremism = modexFB(network)
+
+        self.assertIn(strategy, ([1, 0], [0, 1]))
+        self.assertEqual(effort, 50)
+        self.assertAlmostEqual(extremism, 25.0)
+
+    def test_empty_network(self):
+        network = SocialNetwork([], 0)
+
+        strategy, effort, extremism = modexFB(network)
+
+        self.assertEqual(strategy, [])
+        self.assertEqual(effort, 0)
+        self.assertEqual(extremism, 0.0)
+
+    def test_optimal_combination(self):
+        network = SocialNetwork([
+            Agent(60, 0.5, 1),
+            Agent(50, 0.5, 1),
+            Agent(40, 0.5, 1)
+        ], 45)
+
+        strategy, effort, extremism = modexFB(network)
+
+        self.assertEqual(strategy, [0, 1, 1])
+        self.assertEqual(effort, 45)
+        self.assertAlmostEqual(
+            extremism,
+            20.0
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
