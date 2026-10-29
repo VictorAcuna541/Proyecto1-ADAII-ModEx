@@ -22,8 +22,8 @@ def generate_network(n: int, seed: int = 42) -> SocialNetwork:
 
 
 def benchmark():
-    print(f"{'Agents':<10} {'Time (s)':<15}")
-    print("-" * 25)
+    print(f"{'Agents':<10} {'Combinations':<15} {'Time (s)':<15}")
+    print("-" * 40)
 
     for n in [5, 10, 15, 18, 20]:
         network = generate_network(n)
@@ -32,7 +32,7 @@ def benchmark():
         modexFB(network)
         elapsed = time.perf_counter() - start
 
-        print(f"{n:<10} {elapsed:<15.6f}")
+        print(f"{n:<10} {2**n:<15} {elapsed:<15.6f}")
 
 
 if __name__ == "__main__":
