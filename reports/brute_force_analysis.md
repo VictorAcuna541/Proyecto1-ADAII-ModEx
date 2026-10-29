@@ -42,3 +42,22 @@ Todas las pruebas finalizaron correctamente.
 La fuerza bruta garantiza encontrar una estrategia óptima para ModEx, pero su complejidad exponencial limita su uso en redes grandes.
 
 Su principal utilidad en este proyecto es servir como referencia para verificar la optimalidad de los algoritmos voraz y de programación dinámica.
+
+
+## 7. Análisis experimental de rendimiento
+
+Se realizaron pruebas con diferentes cantidades de agentes para medir el tiempo de ejecución del algoritmo de fuerza bruta.
+
+| Agentes (n) | Combinaciones (2^n) | Tiempo (s) |
+|---|---:|---:|
+| 5 | 32 | 0.000100 |
+| 10 | 1024 | 0.002960 |
+| 15 | 32768 | 0.171397 |
+| 18 | 262144 | 1.896329 |
+| 20 | 1048576 | 7.914240 |
+
+Los resultados muestran que el tiempo de ejecución aumenta rápidamente al incrementar el número de agentes, lo cual es coherente con la complejidad O(n * 2^n).
+
+Aunque fuerza bruta garantiza una solución óptima, su crecimiento exponencial limita su uso en redes grandes.
+
+Nota: Los tiempos corresponden a una ejecución por tamaño y pueden variar según las condiciones del computador.
