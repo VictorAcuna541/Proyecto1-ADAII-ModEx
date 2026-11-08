@@ -1,7 +1,7 @@
 
 import math
 
-from core.models import SocialNetwork
+from core.models import Agent, SocialNetwork
 
 
 def validate_strategy(network: SocialNetwork, strategy: list[int]) -> None:
@@ -12,21 +12,22 @@ def validate_strategy(network: SocialNetwork, strategy: list[int]) -> None:
         raise ValueError("Strategy must contain only 0 and 1")
 
 
+def calculate_agent_effort(agent: Agent) -> int:
+    return math.ceil(
+        abs(agent.opinion)
+        * (1 - agent.receptivity)
+        * agent.influence
+    )
+
+
 def calculate_effort(network: SocialNetwork, strategy: list[int]) -> int:
     validate_strategy(network, strategy)
 
-    total_effort = 0
-
-    for agent, selected in zip(network.agents, strategy):
-        if selected == 1:
-            effort = math.ceil(
-                abs(agent.opinion)
-                * (1 - agent.receptivity)
-                * agent.influence
-            )
-            total_effort += effort
-
-    return total_effort
+    return sum(
+        calculate_agent_effort(agent)
+        for agent, selected in zip(network.agents, strategy)
+        if selected == 1
+    )
 
 
 def calculate_extremism(network: SocialNetwork, strategy: list[int]) -> float:
