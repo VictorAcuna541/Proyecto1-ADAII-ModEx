@@ -1,10 +1,48 @@
+
 # Proyecto1-ADAII-ModEx
 
-INSTRUCCIONES DE EJECUCIÓN:
-1. Instalar las dependencias:
-   pip install -r requirements.txt
+## Instrucciones de ejecución
 
-2. Iniciar la interfaz gráfica:
-   python -m streamlit run app.py
+### 1. Instalar las dependencias
 
-La aplicación se abrirá automáticamente en su navegador (http://localhost:8501).
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 2. Iniciar la interfaz gráfica
+
+```bash
+python -m streamlit run app.py
+```
+
+La aplicación estará disponible en:
+http://localhost:8501
+
+## Pruebas automatizadas
+
+Para ejecutar las pruebas unitarias del proyecto:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Ejecución de la batería oficial
+
+El proyecto incluye un ejecutor automático para los 35 casos
+de prueba proporcionados por el profesor.
+
+Para ejecutar la batería desde la raíz del proyecto:
+
+```bash
+python tests/run_official_battery.py
+```
+
+El programa evalúa los algoritmos, verifica la validez de las
+estrategias y genera el archivo
+`reports/official_battery_results.csv` con los resultados.
+
+Debido a las diferencias de complejidad, algunas ejecuciones
+pueden omitirse o interrumpirse por límites de recursos.
+
+Estos casos se identifican como `SKIPPED` o `TIMEOUT`
+y no se consideran pruebas aprobadas.
