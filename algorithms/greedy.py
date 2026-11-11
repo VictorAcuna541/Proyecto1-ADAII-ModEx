@@ -1,56 +1,71 @@
-from core.calculations import calculate_effort, calculate_extremism
 
-def modexV(RS):
-    
-    agents = RS.agents
+import math
+
+def modexV(rs):
+   
+    agents = rs.agents
+    max_budget = rs.max_budget
     n = len(agents)
-    r_max = RS.max_budget  
-    
-    # Lista binaria de moderación inicializada en ceros
+
+    if n == 0:
+        return [], 0.0, 0.0
+
+    total_sum = 0.0
+
+    for agent in agents:
+        total_sum += (agent.opinion ** 2) * agent.influence
+
+    base_root = math.sqrt(total_sum)
+
+    candidates = []
+
+    for i, agent in enumerate(agents):
+
+        opinion = agent.opinion
+        influence = agent.influence
+
+        if abs(opinion) < 1.0:
+            continue
+
+        effort = math.ceil(
+            abs(opinion)
+            * (1 - agent.receptivity)
+            * influence
+        )
+
+        if effort > max_budget or effort <= 0:
+            continue
+
+        contribution = (opinion ** 2) * influence
+
+        remaining_sum = max(0.0, total_sum - contribution)
+
+        reduction = (
+            base_root - math.sqrt(remaining_sum)
+        ) / n
+
+        if reduction > 0:
+            ratio = reduction / effort
+            candidates.append((ratio, effort, i))
+
+    candidates.sort(key=lambda x: x[0], reverse=True)
+
     E = [0] * n
-    current_effort = 0
-    
-    # Calcular el extremismo inicial de la red sin moderar a nadie
-    initial_extremism = calculate_extremism(RS, E)
-    
-    agent_metrics = []
-    
-    for i in range(n):
-        # Crear una estrategia temporal moderando únicamente al agente i
-        single_E = [0] * n
-        single_E[i] = 1
-        
-        # Calcular esfuerzo y extremismo usando las funciones oficiales
-        effort_i = calculate_effort(RS, single_E)
-        
-        if effort_i > 0:
-            extremism_i = calculate_extremism(RS, single_E)
-            reduction_i = initial_extremism - extremism_i
-            
-            # Ratio de beneficio (reducción de extremismo) por unidad de esfuerzo
-            ratio = reduction_i / effort_i
-        else:
-            ratio = float('inf') if effort_i == 0 else 0
-            
-        agent_metrics.append({
-            'index': i,
-            'ratio': ratio,
-            'effort': effort_i
-        })
-        
-    # Ordenar los agentes de mayor a menor según el criterio voraz (ratio)
-    agent_metrics.sort(key=lambda x: x['ratio'], reverse=True)
-    
-    # Seleccionar vorazmente mientras el presupuesto lo permita
-    for item in agent_metrics:
-        idx = item['index']
-        effort_i = item['effort']
-        
-        if current_effort + effort_i <= r_max:
-            E[idx] = 1
-            current_effort += effort_i
-            
-    # Calcular el extremismo final con la estrategia voraz completa
-    final_extremism = calculate_extremism(RS, E)
-    
-    return (E, current_effort, final_extremism)
+    current_effort = 0.0
+
+    for ratio, effort, i in candidates:
+
+        if current_effort + effort <= max_budget:
+            E[i] = 1
+            current_effort += effort
+    final_sum = 0.0
+
+    for i, agent in enumerate(agents):
+        if E[i] == 0:
+            final_sum += (
+                agent.opinion ** 2
+            ) * agent.influence
+
+    final_extremism = math.sqrt(final_sum) / n
+
+    return E, current_effort, final_extremism
