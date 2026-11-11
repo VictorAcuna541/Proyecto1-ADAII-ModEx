@@ -1,0 +1,106 @@
+﻿file,algorithm,agents,budget,status,effort,extremism,time_seconds,detail
+Prueba1.txt,Fuerza Bruta,5,139,PASS,139,14.068632,0.00014,
+Prueba1.txt,Voraz,5,139,PASS,139.0,14.068632,4.7e-05,
+Prueba1.txt,Programación Dinámica,5,139,PASS,139,14.068632,0.000113,
+Prueba2.txt,Fuerza Bruta,5,145,PASS,137,25.959376,0.000123,
+Prueba2.txt,Voraz,5,145,PASS,137.0,25.959376,2.7e-05,
+Prueba2.txt,Programación Dinámica,5,145,PASS,137,25.959376,0.000141,
+Prueba3.txt,Fuerza Bruta,10,124,PASS,114,16.779324,0.003678,
+Prueba3.txt,Voraz,10,124,PASS,101.0,17.160443,3.3e-05,
+Prueba3.txt,Programación Dinámica,10,124,PASS,114,16.779324,0.000207,
+Prueba4.txt,Fuerza Bruta,10,293,PASS,291,12.999758,0.005236,
+Prueba4.txt,Voraz,10,293,PASS,291.0,12.999758,5.8e-05,
+Prueba4.txt,Programación Dinámica,10,293,PASS,291,12.999758,0.000409,
+Prueba5.txt,Fuerza Bruta,20,356,PASS,353,13.479541,8.890453,
+Prueba5.txt,Voraz,20,356,PASS,353.0,13.479541,4.5e-05,
+Prueba5.txt,Programación Dinámica,20,356,PASS,353,13.479541,0.000951,
+Prueba6.txt,Fuerza Bruta,20,612,PASS,611,13.567751,8.11162,
+Prueba6.txt,Voraz,20,612,PASS,610.0,14.99709,4.4e-05,
+Prueba6.txt,Programación Dinámica,20,612,PASS,611,13.567751,0.0016,
+Prueba7.txt,Fuerza Bruta,35,1890,SKIPPED,,,,Resource safety limit
+Prueba7.txt,Voraz,35,1890,PASS,1890.0,0.0,7.2e-05,
+Prueba7.txt,Programación Dinámica,35,1890,PASS,1890,0.0,0.005342,
+Prueba8.txt,Fuerza Bruta,50,1054,SKIPPED,,,,Resource safety limit
+Prueba8.txt,Voraz,50,1054,PASS,1054.0,6.00777,7.9e-05,
+Prueba8.txt,Programación Dinámica,50,1054,PASS,1054,5.980524,0.008164,
+Prueba9.txt,Fuerza Bruta,50,1320,SKIPPED,,,,Resource safety limit
+Prueba9.txt,Voraz,50,1320,PASS,1319.0,6.525487,7.8e-05,
+Prueba9.txt,Programación Dinámica,50,1320,PASS,1319,6.276415,0.009498,
+Prueba10.txt,Fuerza Bruta,100,1307,SKIPPED,,,,Resource safety limit
+Prueba10.txt,Voraz,100,1307,PASS,1307.0,4.716769,0.000136,
+Prueba10.txt,Programación Dinámica,100,1307,PASS,1307,4.682515,0.024845,
+Prueba11.txt,Fuerza Bruta,100,2971,SKIPPED,,,,Resource safety limit
+Prueba11.txt,Voraz,100,2971,PASS,2971.0,3.5714,0.000138,
+Prueba11.txt,Programación Dinámica,100,2971,PASS,2971,3.566501,0.043335,
+Prueba12.txt,Fuerza Bruta,125,3411,SKIPPED,,,,Resource safety limit
+Prueba12.txt,Voraz,125,3411,PASS,3411.0,3.189192,0.000165,
+Prueba12.txt,Programación Dinámica,125,3411,PASS,3411,3.09728,0.063827,
+Prueba13.txt,Fuerza Bruta,125,3005,SKIPPED,,,,Resource safety limit
+Prueba13.txt,Voraz,125,3005,PASS,3005.0,4.0275,0.000167,
+Prueba13.txt,Programación Dinámica,125,3005,PASS,3005,4.0275,0.059874,
+Prueba14.txt,Fuerza Bruta,150,2919,SKIPPED,,,,Resource safety limit
+Prueba14.txt,Voraz,150,2919,PASS,2919.0,3.507078,0.000196,
+Prueba14.txt,Programación Dinámica,150,2919,PASS,2919,3.501905,0.071114,
+Prueba15.txt,Fuerza Bruta,200,4626,SKIPPED,,,,Resource safety limit
+Prueba15.txt,Voraz,200,4626,PASS,4626.0,2.550525,0.000264,
+Prueba15.txt,Programación Dinámica,200,4626,PASS,4626,2.543787,0.152898,
+Prueba16.txt,Fuerza Bruta,200,4152,SKIPPED,,,,Resource safety limit
+Prueba16.txt,Voraz,200,4152,PASS,4152.0,3.504879,0.000249,
+Prueba16.txt,Programación Dinámica,200,4152,PASS,4152,3.423374,0.140768,
+Prueba17.txt,Fuerza Bruta,300,4323,SKIPPED,,,,Resource safety limit
+Prueba17.txt,Voraz,300,4323,PASS,4323.0,3.05164,0.000374,
+Prueba17.txt,Programación Dinámica,300,4323,PASS,4323,2.950411,0.218071,
+Prueba18.txt,Fuerza Bruta,300,3582,SKIPPED,,,,Resource safety limit
+Prueba18.txt,Voraz,300,3582,PASS,3582.0,3.427403,0.000378,
+Prueba18.txt,Programación Dinámica,300,3582,PASS,3582,3.342833,0.24782,
+Prueba19.txt,Fuerza Bruta,350,5169,SKIPPED,,,,Resource safety limit
+Prueba19.txt,Voraz,350,5169,PASS,5169.0,2.8023,0.000457,
+Prueba19.txt,Programación Dinámica,350,5169,PASS,5169,2.778395,0.37099,
+Prueba20.txt,Fuerza Bruta,400,12868,SKIPPED,,,,Resource safety limit
+Prueba20.txt,Voraz,400,12868,PASS,12868.0,1.925535,0.000503,
+Prueba20.txt,Programación Dinámica,400,12868,PASS,12868,1.882946,0.802838,
+Prueba21.txt,Fuerza Bruta,500,7020,SKIPPED,,,,Resource safety limit
+Prueba21.txt,Voraz,500,7020,PASS,7020.0,2.550539,0.000623,
+Prueba21.txt,Programación Dinámica,500,7020,PASS,7020,2.534558,0.59212,
+Prueba22.txt,Fuerza Bruta,500,7466,SKIPPED,,,,Resource safety limit
+Prueba22.txt,Voraz,500,7466,PASS,7466.0,2.490536,0.000618,
+Prueba22.txt,Programación Dinámica,500,7466,PASS,7466,2.467929,0.632874,
+Prueba23.txt,Fuerza Bruta,750,9048,SKIPPED,,,,Resource safety limit
+Prueba23.txt,Voraz,750,9048,PASS,9048.0,2.151367,0.000925,
+Prueba23.txt,Programación Dinámica,750,9048,SKIPPED,,,,Resource safety limit
+Prueba24.txt,Fuerza Bruta,750,23266,SKIPPED,,,,Resource safety limit
+Prueba24.txt,Voraz,750,23266,PASS,23266.0,1.390992,0.000947,
+Prueba24.txt,Programación Dinámica,750,23266,SKIPPED,,,,Resource safety limit
+Prueba25.txt,Fuerza Bruta,800,24137,SKIPPED,,,,Resource safety limit
+Prueba25.txt,Voraz,800,24137,PASS,24137.0,1.274885,0.000982,
+Prueba25.txt,Programación Dinámica,800,24137,SKIPPED,,,,Resource safety limit
+Prueba26.txt,Fuerza Bruta,1000,27012,SKIPPED,,,,Resource safety limit
+Prueba26.txt,Voraz,1000,27012,PASS,27012.0,1.18726,0.001345,
+Prueba26.txt,Programación Dinámica,1000,27012,SKIPPED,,,,Resource safety limit
+Prueba27.txt,Fuerza Bruta,1500,43787,SKIPPED,,,,Resource safety limit
+Prueba27.txt,Voraz,1500,43787,PASS,43787.0,0.998946,0.001989,
+Prueba27.txt,Programación Dinámica,1500,43787,SKIPPED,,,,Resource safety limit
+Prueba28.txt,Fuerza Bruta,1500,41869,SKIPPED,,,,Resource safety limit
+Prueba28.txt,Voraz,1500,41869,PASS,41869.0,1.009423,0.001998,
+Prueba28.txt,Programación Dinámica,1500,41869,SKIPPED,,,,Resource safety limit
+Prueba29.txt,Fuerza Bruta,2000,52343,SKIPPED,,,,Resource safety limit
+Prueba29.txt,Voraz,2000,52343,PASS,52343.0,0.894101,0.002521,
+Prueba29.txt,Programación Dinámica,2000,52343,SKIPPED,,,,Resource safety limit
+Prueba30.txt,Fuerza Bruta,2500,64469,SKIPPED,,,,Resource safety limit
+Prueba30.txt,Voraz,2500,64469,PASS,64469.0,0.811717,0.003097,
+Prueba30.txt,Programación Dinámica,2500,64469,SKIPPED,,,,Resource safety limit
+Prueba31.txt,Fuerza Bruta,10000,220467,SKIPPED,,,,Resource safety limit
+Prueba31.txt,Voraz,10000,220467,PASS,220467.0,0.45654,0.013606,
+Prueba31.txt,Programación Dinámica,10000,220467,SKIPPED,,,,Resource safety limit
+Prueba32.txt,Fuerza Bruta,15000,356688,SKIPPED,,,,Resource safety limit
+Prueba32.txt,Voraz,15000,356688,PASS,356688.0,0.352311,0.019863,
+Prueba32.txt,Programación Dinámica,15000,356688,SKIPPED,,,,Resource safety limit
+Prueba33.txt,Fuerza Bruta,20000,431753,SKIPPED,,,,Resource safety limit
+Prueba33.txt,Voraz,20000,431753,PASS,431753.0,0.332623,0.028252,
+Prueba33.txt,Programación Dinámica,20000,431753,SKIPPED,,,,Resource safety limit
+Prueba34.txt,Fuerza Bruta,25000,376670,SKIPPED,,,,Resource safety limit
+Prueba34.txt,Voraz,25000,376670,PASS,376670.0,0.341771,0.037383,
+Prueba34.txt,Programación Dinámica,25000,376670,SKIPPED,,,,Resource safety limit
+Prueba35.txt,Fuerza Bruta,30000,609994,SKIPPED,,,,Resource safety limit
+Prueba35.txt,Voraz,30000,609994,PASS,609994.0,0.27768,0.042633,
+Prueba35.txt,Programación Dinámica,30000,609994,SKIPPED,,,,Resource safety limit
