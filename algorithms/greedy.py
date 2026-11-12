@@ -1,8 +1,7 @@
-
 import math
 
 def modexV(rs):
-   
+
     agents = rs.agents
     max_budget = rs.max_budget
     n = len(agents)
@@ -18,6 +17,7 @@ def modexV(rs):
     base_root = math.sqrt(total_sum)
 
     candidates = []
+    free_candidates = []
 
     for i, agent in enumerate(agents):
 
@@ -33,7 +33,7 @@ def modexV(rs):
             * influence
         )
 
-        if effort > max_budget or effort <= 0:
+        if effort > max_budget or effort < 0:
             continue
 
         contribution = (opinion ** 2) * influence
@@ -44,20 +44,30 @@ def modexV(rs):
             base_root - math.sqrt(remaining_sum)
         ) / n
 
-        if reduction > 0:
+        if reduction <= 0:
+            continue
+
+        if effort == 0:
+            free_candidates.append((reduction, i))
+        else:
             ratio = reduction / effort
             candidates.append((ratio, effort, i))
 
-    candidates.sort(key=lambda x: x[0], reverse=True)
-
     E = [0] * n
     current_effort = 0.0
+
+    for reduction, i in free_candidates:
+        if current_effort <= max_budget: 
+            E[i] = 1
+
+    candidates.sort(key=lambda x: x[0], reverse=True)
 
     for ratio, effort, i in candidates:
 
         if current_effort + effort <= max_budget:
             E[i] = 1
             current_effort += effort
+
     final_sum = 0.0
 
     for i, agent in enumerate(agents):
